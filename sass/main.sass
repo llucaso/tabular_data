@@ -1,3 +1,76 @@
 ﻿*
 	margin: 0
 	padding: 0
+	box-sizing: border-box
+
+@import "bourbon/bourbon"
+
+body
+	background-color: #FAFAFA
+
+table
+	border: 1px solid rgba(0,0,0,.12)
+	border-collapse: collapse
+	white-space: nowrap
+	font-family: "Open Sans"
+	background-color: #ffffff
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12)
+
+th
+	padding: 10px
+	color: #757575
+	margin: 18px 47px 14px 22px
+	text-align: left
+
+.container
+	margin-top: 300px
+	margin-left: 40%
+
+label
+	cursor: pointer
+
+	input[type="checkbox"]
+		display: none
+		+ .label-text:before
+			content: "\f096"
+			font-family: "fontAwesome"
+			speak: none
+			font-style: normal
+			font-weight: normal
+			font-variant: normal
+			text-transform: none
+			//line-height: 1
+			-webkit-font-smoothing: antialiased
+			width: 1em				//sprawdz
+			font-size: 18px
+			display: inline-block
+			vertical-align: middle
+			color: #757575
+
+		&:checked + .label-text:before
+			content: "\f14a"
+			color: #06a3e9
+			+animation(tick 180ms ease-in)
+			vertical-align: middle
+
++keyframes(tick)
+	from
+		+transform(scale(0))
+	to
+		+transform(scale(1))
+
+td
+	margin: 18px 47px 14px 22px
+	text-justify: left
+	padding: 10px
+	border-bottom: 1px solid rgba(0,0,0,.12)
+	border-top: 1px solid rgba(0,0,0,.12)
+	color: #757575
+
+.row
+	&:hover
+		background-color: #EEEEEE
+		+transition(150ms)
+
+.hoverOnCheck
+	background-color: #EEEEEE
